@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sender number:</strong>
+  <%= @user.sender_number %>
+</p>
+
+<p>
+  <strong>Pass code:</strong>
+  <%= @user.pass_code %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @user.time %>
+</p>
+
+<p>
+  <strong>Service provider:</strong>
+  <%= @user.service_provider %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
