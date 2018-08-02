@@ -1,3 +1,11 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+  include Response
+  include ExceptionHandler
+  # before_action :get_request
+
+  # private
+
+  # def get_request
+  #   puts request.headers.each { |req| puts req }
+  # end
 end
