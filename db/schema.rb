@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180728092934) do
+ActiveRecord::Schema.define(version: 20180802052046) do
+
+  create_table "transactions", force: :cascade do |t|
+    t.string "sender_number"
+    t.string "receiver_number"
+    t.integer "credit_amount"
+    t.integer "debit_amount"
+    t.string "sender_network"
+    t.string "receiver_network"
+    t.integer "receiver_balance"
+    t.datetime "time"
+    t.string "status"
+    t.string "reason"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_transactions_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "sender_number"
