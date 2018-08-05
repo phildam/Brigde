@@ -1,32 +1,37 @@
-# Bridge README
+# Contributing
+:+1::tada: First off, thanks for taking the time to contribute! :tada::+1:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting Started
+The following instructions will get you a copy of this project up and running on your local machine for development and testing purposes.
 
-Things you may want to cover:
+### Prerequisites
+* Git
+* Ruby 2.4.0
+* Rails 5.1.6
+* Bundler gem
 
-* Ruby version
-    - ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-darwin17]
+### Installation 
+clone this repo
 
-* System dependencies
-    - Mac ox
-    - Rails 5.1.6
-    - 
+* Set up
+```zsh
+bundle install
+```
 
-* Configuration
-  
+* Database setup
+ ```zsh
+rails db:create
+rails db:migrate
+```
 
-* Database creation
-  -- rails db:create
+### Start the server
+Run a local development server
+```zsh
+rails s
+```
 
-* Database initialization
-  rails db:migrate
-
-* How to run the test suite
-  -rspec
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Running the tests
+open the shell/command prompt
+```zsh
+rspec
+```
