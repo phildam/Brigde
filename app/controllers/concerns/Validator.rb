@@ -4,7 +4,7 @@ class Validator
       '0701' => 'Airtel', '0702' =>	'Smile', '07025' => 'Visafone',
       '07026' => 'Visafone', '07027' => 'MultiLinks', '07028' => 'Starcomms',
       '07029' => 'Starcomms', '0703' =>	'MTN', '0704' =>	'Visafone',
-      '0705' =>	'Globacom', '0706' =>	'MTN', '0707' =>	'ZoomMobile','0708' => 'Airtel',
+      '0705' =>	'Globacom', '0706' =>	'MTN', '0707' =>	'ZoomMobile', '0708' => 'Airtel',
       '0709' => 'MultiLinks', '0802' => 'Airtel', '0803' => 'MTN', '0804' => 'Ntel',
       '0805' => 'Globacom',
       '0806' => 'MTN',
@@ -32,7 +32,7 @@ class Validator
   end
 
   def self.valid_number?(sender)
-    nigeria_phone_prefix.each do |key, value|
+    nigeria_phone_prefix.each do |key, _value|
       return true if !!(sender =~ /#{key}(\d{4,})/ && sender.length == 11)
     end
     false

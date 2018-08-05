@@ -11,7 +11,7 @@ class Transaction < ApplicationRecord
       valid_number = Validator.valid_number? receiver_number
       errors.add(:receiver_number, message: 'receiver number is not a valid nigerian number') unless valid_number
     else
-      errors.add(:receiver_number, message: 'Number is required');
+      errors.add(:receiver_number, message: 'Number is required')
     end
   end
 
@@ -20,7 +20,7 @@ class Transaction < ApplicationRecord
       valid_balance = sender_balance >= 50
       errors.add(:sender_number, message: 'Invalid account balance, your minimum balance must be 50') unless valid_balance
     else
-      errors.add(:sender_number, message: 'sender balance is required');
+      errors.add(:sender_number, message: 'sender balance is required')
     end
   end
 
@@ -35,7 +35,7 @@ class Transaction < ApplicationRecord
   end
 
   def set_transaction_status
-    self.debit_amount = self.credit_amount + 10
+    self.debit_amount = credit_amount + 10
     if !errors.empty?
       self.status = 'failed'
       self.reason = errors.full_messages

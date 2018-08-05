@@ -1,7 +1,7 @@
 
 class Api::V1::TransactionsController < ApplicationController
   before_action :init_user, :check_code, :check_credit,
-                :check_credit, :check_balance, :check_receiver
+                :check_credit, :check_balance, :check_receiver, only: :create
 
   def index
     transaction = Transaction.all
@@ -43,7 +43,7 @@ class Api::V1::TransactionsController < ApplicationController
   end
 
   def check_credit
-    credit = params[:credit_amount];
+    credit = params[:credit_amount]
     if @sender_balance < credit
       render_error 'Transaction failed, Your balance is low'
     elsif @sender_balance < credit + 10
