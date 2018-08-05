@@ -19,8 +19,7 @@ ActiveRecord::Schema.define(version: 20180802052046) do
     t.integer "debit_amount"
     t.string "sender_network"
     t.string "receiver_network"
-    t.integer "receiver_balance"
-    t.datetime "time"
+    t.integer "sender_balance"
     t.string "status"
     t.string "reason"
     t.integer "user_id", null: false
@@ -33,11 +32,9 @@ ActiveRecord::Schema.define(version: 20180802052046) do
     t.string "sender_number"
     t.string "pass_code"
     t.datetime "time"
-    t.string "name"
     t.string "service_provider"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "address"
   end
 
 end

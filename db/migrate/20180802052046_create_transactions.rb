@@ -7,8 +7,7 @@ class CreateTransactions < ActiveRecord::Migration[5.1]
       t.integer :debit_amount
       t.string :sender_network
       t.string :receiver_network
-      t.integer :receiver_balance
-      t.datetime :time
+      t.integer :sender_balance
       t.string :status
       t.string :reason
       t.references :user, foreign_key: true, null: false
