@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class Api::V1::UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: %i[show edit update destroy]
 
   def index
     @user = User.all
@@ -35,16 +37,17 @@ class Api::V1::UsersController < ApplicationController
   end
 
   private
-    def set_user
-      @user = User.find(params[:id])
-    end
 
-    def user_exist
-      error = {error: 'user already exist'}
-      json_render(error, status: :unprocessable_entity)
-    end
+  def set_user
+    @user = User.find(params[:id])
+  end
 
-    def user_params
-      params.require(:user).permit(:sender_number, :pass_code, :service_provider)
-    end
+  def user_exist
+    error = { error: 'user already exist' }
+    json_render(error, status: :unprocessable_entity)
+  end
+
+  def user_params
+    params.require(:user).permit(:sender_number, :pass_code, :service_provider)
+  end
 end
