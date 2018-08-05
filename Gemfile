@@ -19,6 +19,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_girl_rails'
   gem 'ffaker'
+  gem 'rubocop'
 end
 
 group :development do

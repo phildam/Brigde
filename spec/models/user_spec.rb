@@ -25,5 +25,4 @@ RSpec.describe User, type: :model do
     is_nigerian_number = Validator.valid_number? user.sender_number
     expect(is_nigerian_number).not_to be(true)
   end
-
 end
