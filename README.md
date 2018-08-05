@@ -1,5 +1,5 @@
-# Contributing
-:+1::tada: First off, thanks for taking the time to contribute! :tada::+1:
+# Readme
+Welcome to the bridge 1.0
 
 ## Getting Started
 The following instructions will get you a copy of this project up and running on your local machine for development and testing purposes.
